@@ -13,7 +13,7 @@ const NAV_LINKS = [
   { label: "Innovation", href: "#tech-stack" },
   // { label: 'Careers', href: '#careers' },
   { label: "Contact", href: "#contact" },
-  { label: "ERP Login", href: "https://erp-frontend-chi-one.vercel.app/" },
+  { label: "ERP Login", href: "https://www.themasterserp.com/" },
 ];
 
 export default function Navbar() {
