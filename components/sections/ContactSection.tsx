@@ -28,8 +28,8 @@ const CONTACT_INFO = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+44 20 86100933",
-    href: "tel:+442086100933",
+    value: "+918688361839",
+    href: "tel:+918688361839",
   },
   {
     icon: Mail,
