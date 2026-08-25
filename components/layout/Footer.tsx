@@ -162,7 +162,8 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#b5915a] flex-shrink-0 mt-0.5" />
                 <span className="text-[#606060] text-sm leading-relaxed">
-                  86-90 Paul St, London EC2A 4NE, UK
+                  H. No. 6-3-1093/406, V V Vintage Boulevard,Somajiguda,
+                  Hyderabad, Telangana- 500082, India
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -180,7 +181,7 @@ export default function Footer() {
                   href="mailto:enterprise@dominaretech.com"
                   className="text-[#606060] hover:text-white text-sm transition-colors"
                 >
-                  info@dominaretech.com
+                  support@dominaretech.com
                 </a>
               </li>
             </ul>
@@ -190,12 +191,12 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[#404040] text-sm">
-            &copy; {new Date().getFullYear()} Dominare Tech Group. All rights
+            &copy; {new Date().getFullYear()} Dominare Tech Pvt Ltd. All rights
             reserved.
           </p>
           <p className="text-[#404040] text-sm">
             Designed &amp; Built by{" "}
-            <span className="text-[#606060]">Dominare Tech Group</span>
+            <span className="text-[#606060]">Dominare Tech Pvt Ltd</span>
           </p>
         </div>
       </div>

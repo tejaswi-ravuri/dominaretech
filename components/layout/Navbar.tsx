@@ -13,7 +13,7 @@ const NAV_LINKS = [
   { label: "Innovation", href: "#tech-stack" },
   // { label: 'Careers', href: '#careers' },
   { label: "Contact", href: "#contact" },
-  { label: "ERP Login", href: "https://www.themasterserp.com/" },
+  { label: "ERP Login", href: "https://hive.dominaretech.com/" },
 ];
 
 export default function Navbar() {

@@ -1,64 +1,101 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { MapPin, Phone, Mail, Clock, CheckCircle2, Send, ArrowRight } from 'lucide-react'
-import SectionHeader from '@/components/ui/SectionHeader'
-import { viewportConfig, slideLeftVariants, slideRightVariants } from '@/lib/motion'
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  CheckCircle2,
+  Send,
+  ArrowRight,
+} from "lucide-react";
+import SectionHeader from "@/components/ui/SectionHeader";
+import {
+  viewportConfig,
+  slideLeftVariants,
+  slideRightVariants,
+} from "@/lib/motion";
 
 const CONTACT_INFO = [
-  { icon: MapPin, label: 'Address', value: '100 Enterprise Way, Tech District\nNew York, NY 10001' },
-  { icon: Phone, label: 'Phone', value: '+1 (800) 467-TECH', href: 'tel:+18004673824' },
-  { icon: Mail, label: 'Email', value: 'enterprise@dominaretech.com', href: 'mailto:enterprise@dominaretech.com' },
-  { icon: Clock, label: 'Hours', value: 'Mon – Fri: 8AM – 8PM EST\n24/7 Emergency Support' },
-]
+  {
+    icon: MapPin,
+    label: "Address",
+    value:
+      " H. No. 6-3-1093/406, V V Vintage Boulevard,\nSomajiguda, Hyderabad, Telangana - 500082",
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "+44 20 86100933",
+    href: "tel:+442086100933",
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "support@dominaretech.com",
+    href: "mailto:support@dominaretech.com",
+  },
+  {
+    icon: Clock,
+    label: "Hours",
+    value: "Mon – Fri: 8AM – 8PM IST\n24/7 Emergency Support",
+  },
+];
 
 interface FormData {
-  name: string
-  email: string
-  company: string
-  phone: string
-  message: string
+  name: string;
+  email: string;
+  company: string;
+  phone: string;
+  message: string;
 }
 
 const INITIAL_FORM: FormData = {
-  name: '',
-  email: '',
-  company: '',
-  phone: '',
-  message: '',
-}
+  name: "",
+  email: "",
+  company: "",
+  phone: "",
+  message: "",
+};
 
 export default function ContactSection() {
-  const [form, setForm] = useState<FormData>(INITIAL_FORM)
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
+  const [form, setForm] = useState<FormData>(INITIAL_FORM);
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
+    e.preventDefault();
+    setLoading(true);
     setTimeout(() => {
-      setLoading(false)
-      setSubmitted(true)
-    }, 1200)
-  }
+      setLoading(false);
+      setSubmitted(true);
+    }, 1200);
+  };
 
   const handleReset = () => {
-    setSubmitted(false)
-    setForm(INITIAL_FORM)
-  }
+    setSubmitted(false);
+    setForm(INITIAL_FORM);
+  };
 
   return (
-    <section id="contact" className="section-padding bg-[#111111] relative overflow-hidden">
+    <section
+      id="contact"
+      className="section-padding bg-[#111111] relative overflow-hidden"
+    >
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
         style={{
-          background: 'radial-gradient(ellipse 50% 60% at 0% 100%, rgba(181,145,90,0.04) 0%, transparent 70%)',
+          background:
+            "radial-gradient(ellipse 50% 60% at 0% 100%, rgba(181,145,90,0.04) 0%, transparent 70%)",
         }}
       />
 
@@ -84,25 +121,44 @@ export default function ContactSection() {
                   <Icon className="w-5 h-5 text-[#b5915a]" />
                 </div>
                 <div>
-                  <p className="text-[#505050] text-xs font-medium uppercase tracking-wider mb-1">{label}</p>
+                  <p className="text-[#505050] text-xs font-medium uppercase tracking-wider mb-1">
+                    {label}
+                  </p>
                   {href ? (
-                    <a href={href} className="text-[#a0a0a0] text-sm hover:text-white transition-colors whitespace-pre-line leading-relaxed">
+                    <a
+                      href={href}
+                      className="text-[#a0a0a0] text-sm hover:text-white transition-colors whitespace-pre-line leading-relaxed"
+                    >
                       {value}
                     </a>
                   ) : (
-                    <p className="text-[#a0a0a0] text-sm whitespace-pre-line leading-relaxed">{value}</p>
+                    <p className="text-[#a0a0a0] text-sm whitespace-pre-line leading-relaxed">
+                      {value}
+                    </p>
                   )}
                 </div>
               </div>
             ))}
 
             {/* CTA note */}
-            <div className="glass-card p-5 border-[#b5915a]/20" style={{ borderColor: 'rgba(181,145,90,0.2)' }}>
+            <div
+              className="glass-card p-5 border-[#b5915a]/20"
+              style={{ borderColor: "rgba(181,145,90,0.2)" }}
+            >
               <p className="text-[#606060] text-sm leading-relaxed">
-                <span className="text-[#b5915a] font-semibold">Enterprise inquiries</span> typically receive a response within 4 business hours. For urgent matters, please call our direct line.
+                <span className="text-[#b5915a] font-semibold">
+                  Enterprise inquiries
+                </span>{" "}
+                typically receive a response within 4 business hours. For urgent
+                matters, please call our direct line.
               </p>
               <button
-                onClick={() => document.getElementById('contact-form')?.querySelector('input')?.focus()}
+                onClick={() =>
+                  document
+                    .getElementById("contact-form")
+                    ?.querySelector("input")
+                    ?.focus()
+                }
                 className="mt-4 flex items-center gap-1.5 text-[#b5915a] text-sm font-semibold"
               >
                 Start your inquiry
@@ -119,7 +175,10 @@ export default function ContactSection() {
             viewport={viewportConfig}
             className="lg:col-span-3"
           >
-            <div className="glass-card p-8 relative overflow-hidden" id="contact-form">
+            <div
+              className="glass-card p-8 relative overflow-hidden"
+              id="contact-form"
+            >
               <AnimatePresence mode="wait">
                 {submitted ? (
                   <motion.div
@@ -132,11 +191,17 @@ export default function ContactSection() {
                     <div className="w-16 h-16 rounded-full bg-[#b5915a]/15 flex items-center justify-center">
                       <CheckCircle2 className="w-8 h-8 text-[#b5915a]" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">Message Sent</h3>
+                    <h3 className="text-xl font-bold text-white">
+                      Message Sent
+                    </h3>
                     <p className="text-[#606060] text-sm max-w-xs">
-                      Thank you for reaching out. Our enterprise team will be in touch within 4 business hours.
+                      Thank you for reaching out. Our enterprise team will be in
+                      touch within 4 business hours.
                     </p>
-                    <button onClick={handleReset} className="btn-outline mt-4 py-2.5 px-6 text-sm">
+                    <button
+                      onClick={handleReset}
+                      className="btn-outline mt-4 py-2.5 px-6 text-sm"
+                    >
                       Send Another Message
                     </button>
                   </motion.div>
@@ -151,7 +216,10 @@ export default function ContactSection() {
                   >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-[#505050] text-xs font-medium uppercase tracking-wider mb-2" htmlFor="name">
+                        <label
+                          className="block text-[#505050] text-xs font-medium uppercase tracking-wider mb-2"
+                          htmlFor="name"
+                        >
                           Full Name *
                         </label>
                         <input
@@ -166,7 +234,10 @@ export default function ContactSection() {
                         />
                       </div>
                       <div>
-                        <label className="block text-[#505050] text-xs font-medium uppercase tracking-wider mb-2" htmlFor="email">
+                        <label
+                          className="block text-[#505050] text-xs font-medium uppercase tracking-wider mb-2"
+                          htmlFor="email"
+                        >
                           Email Address *
                         </label>
                         <input
@@ -184,7 +255,10 @@ export default function ContactSection() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-[#505050] text-xs font-medium uppercase tracking-wider mb-2" htmlFor="company">
+                        <label
+                          className="block text-[#505050] text-xs font-medium uppercase tracking-wider mb-2"
+                          htmlFor="company"
+                        >
                           Company *
                         </label>
                         <input
@@ -199,7 +273,10 @@ export default function ContactSection() {
                         />
                       </div>
                       <div>
-                        <label className="block text-[#505050] text-xs font-medium uppercase tracking-wider mb-2" htmlFor="phone">
+                        <label
+                          className="block text-[#505050] text-xs font-medium uppercase tracking-wider mb-2"
+                          htmlFor="phone"
+                        >
                           Phone Number
                         </label>
                         <input
@@ -215,7 +292,10 @@ export default function ContactSection() {
                     </div>
 
                     <div>
-                      <label className="block text-[#505050] text-xs font-medium uppercase tracking-wider mb-2" htmlFor="message">
+                      <label
+                        className="block text-[#505050] text-xs font-medium uppercase tracking-wider mb-2"
+                        htmlFor="message"
+                      >
                         Message *
                       </label>
                       <textarea
@@ -249,7 +329,8 @@ export default function ContactSection() {
                     </button>
 
                     <p className="text-[#404040] text-xs text-center">
-                      By submitting, you agree to our privacy policy. We&rsquo;ll never share your details.
+                      By submitting, you agree to our privacy policy.
+                      We&rsquo;ll never share your details.
                     </p>
                   </motion.form>
                 )}
@@ -265,19 +346,23 @@ export default function ContactSection() {
           viewport={viewportConfig}
           transition={{ duration: 0.6 }}
           className="glass-card overflow-hidden"
-          style={{ aspectRatio: '21/5', minHeight: '200px' }}
+          style={{ aspectRatio: "21/5", minHeight: "200px" }}
         >
           <div className="w-full h-full flex flex-col items-center justify-center gap-3 bg-[#0d0d0d]">
             <div className="w-12 h-12 rounded-full bg-[#b5915a]/10 flex items-center justify-center">
               <MapPin className="w-6 h-6 text-[#b5915a]" />
             </div>
             <div className="text-center">
-              <p className="text-[#303030] text-sm font-medium">Interactive Map</p>
-              <p className="text-[#252525] text-xs mt-0.5">100 Enterprise Way, Tech District, New York, NY 10001</p>
+              <p className="text-[#303030] text-sm font-medium">
+                Interactive Map
+              </p>
+              <p className="text-[#252525] text-xs mt-0.5">
+                100 Enterprise Way, Tech District, New York, NY 10001
+              </p>
             </div>
           </div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
