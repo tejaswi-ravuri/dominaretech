@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import logo from "@/public/logo-white.png";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
@@ -13,7 +15,7 @@ const NAV_LINKS = [
   { label: "Innovation", href: "#tech-stack" },
   // { label: 'Careers', href: '#careers' },
   { label: "Contact", href: "#contact" },
-  { label: "ERP Login", href: "https://hive.dominaretech.com/" },
+  // { label: "ERP Login", href: "https://hive.dominaretech.com/" },
 ];
 
 export default function Navbar() {
@@ -53,7 +55,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18 py-4">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
           <a
             href="#home"
@@ -63,22 +65,16 @@ export default function Navbar() {
             }}
             className="flex items-center gap-2 flex-shrink-0"
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#b5915a] to-[#9a7a47] flex items-center justify-center flex-shrink-0">
-              <span className="text-[#0a0a0a] font-black text-sm">D</span>
-            </div>
-            <div className="leading-tight">
-              <span className="text-white font-black text-lg tracking-tight">
-                Dominare
-              </span>
-              <span className="text-[#a0a0a0] font-medium text-lg tracking-tight">
-                {" "}
-                Tech Group
-              </span>
-            </div>
+            <Image
+              src={logo}
+              alt="Dominare Tech Pvt Ltd"
+              priority
+              className="h-12 lg:h-16 w-auto"
+            />
           </a>
 
           {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-2">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
@@ -87,7 +83,7 @@ export default function Navbar() {
                   e.preventDefault();
                   handleLinkClick(link.href);
                 }}
-                className="px-3 py-2 text-sm font-medium text-[#a0a0a0] hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
+                className="px-4 py-2 text-base font-medium text-[#a0a0a0] hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
               >
                 {link.label}
               </a>

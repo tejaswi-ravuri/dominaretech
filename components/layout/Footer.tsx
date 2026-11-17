@@ -16,6 +16,8 @@ import {
   MapPin,
   ArrowRight,
 } from "lucide-react";
+import Image from "next/image";
+import logo from "@/public/logo-white.png";
 
 const QUICK_LINKS = [
   { label: "Home", href: "#home" },
@@ -74,18 +76,11 @@ export default function Footer() {
               }}
               className="flex items-center gap-2 mb-5"
             >
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#b5915a] to-[#9a7a47] flex items-center justify-center flex-shrink-0">
-                <span className="text-[#0a0a0a] font-black text-sm">D</span>
-              </div>
-              <div className="leading-tight">
-                <span className="text-white font-black text-lg tracking-tight">
-                  Dominare
-                </span>
-                <span className="text-[#a0a0a0] font-medium text-lg tracking-tight">
-                  {" "}
-                  Tech Group
-                </span>
-              </div>
+              <Image
+                src={logo}
+                alt="Dominare Tech Pvt Ltd"
+                className="h-14 w-auto"
+              />
             </a>
             <p className="text-[#606060] text-sm leading-relaxed mb-6">
               Engineering tomorrow. Building intelligent digital enterprises
